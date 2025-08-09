@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "novel-reading",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "novel-reading-platform-db",
+          "database_id": "28045efc-7416-4bcc-b93d-e4b80a8c4ea7"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "6f4da543b3f8498eb9cd4e68b678339a",
+            "binding": "SECRET",
+            "secret_name": "novel"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
